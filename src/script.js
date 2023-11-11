@@ -31,36 +31,7 @@ const matcapTexture = textureLoader.load('texture/matcaps/1.jpg')
 
 const fontLoader = new FontLoader()
 
-fontLoader.load(
-    '/fonts/helvetiker_regular.typeface.json',
-    (font) =>
-    {
-        // Material
-        const material4 = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
 
-        // Text
-        const textGeometry = new TextGeometry(
-            'PortFolio - Lord Beubeuh ',
-            {
-                font: font,
-                size: 2,
-                height: 0.8,
-                curveSegments: 32,
-                bevelEnabled: true,
-                bevelThickness: 0.1,
-                bevelSize: 0.1,
-                bevelOffset: 0.02,
-                bevelSegments: 20
-            }
-        )
-        textGeometry.center()
-
-        const text = new THREE.Mesh(textGeometry, material4)
-        text.position.set(10, 18, 10)
-        text.rotateY(0.7)
-        text.rotateX(-0.3)
-        scene.add(text)
-        })
 
 
 /**
